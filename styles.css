@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #3c83fe;
+  --secondary-color: #d10014;
+  --text-color: #272838;
+  --accent-color: #999bb8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.container {
+  display: block;
+  width: 90%;
+  margin: auto;
+  background-color: red;
+}
+
+.header-title {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.your-balance .label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.your-balance .value {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 64px;
+  color: var(--text-color);
+}
+
+/* Telefonos XL */
+@media (min-width: 640px) {
+  .container {
+    background-color: blue;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 462px;
+    margin: auto;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  .container {
+    width: 940px;
+    margin: auto;
+    background-color: green;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+}
+
+/* Full HD */
+@media (min-width: 1536px) {
+}
