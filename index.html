@@ -2,26 +2,90 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Expense Tracker</title>
   </head>
   <body>
-    <main class="container">
-      <h1 class="header-title">Expense Tracker</h1>
+    <h2 class="app-title">Expense Tracker</h2>
 
-      <section class="wrapper">
-        <div class="your-balance">
-          <p class="label">Your balance</p>
-          <p class="value">$0.00</p>
+    <div class="container">
+      <!-- Balance section -->
+      <section class="balance-container center-column">
+        <p class="balance-title">Your balance</p>
+        <p class="balance-amount" id="totalBalance">$0.00</p>
+      </section>
+
+      <!-- INCOME AND EXPENSE AMOUNTS -->
+      <section class="total-info center-column">
+        <div class="amount-container income-color">
+          <p class="label">Income</p>
+          <p class="amount" id="incomeTotalAmount">$0.00</p>
         </div>
 
-        <div class="income-balance">
-          <p class="label">Income</p>
-          <p class="value">$1000.00</p>
+        <div class="amount-container expense-color">
+          <p class="label">Expense</p>
+          <p class="amount" id="expenseTotalAmount">$0.00</p>
         </div>
       </section>
-    </main>
+
+      <!-- ADD NEW TRANSACTION -->
+      <form class="add-transaction center-column" id="addNewTransactionForm">
+        <h2 class="title">Add new transaction</h2>
+
+        <label class="input-label" for="descriptiveText">
+          <span>Descriptive Text</span>
+          <input
+            type="text"
+            class="form-input"
+            id="descriptiveText"
+            placeholder="Enter a descriptive text..."
+          />
+        </label>
+
+        <label class="input-label" for="amountText">
+          <span>Amount (negative - expense | positive - income)</span>
+          <input
+            type="number"
+            step="0.01"
+            class="form-input"
+            id="amountText"
+            placeholder="Enter the amount..."
+          />
+        </label>
+
+        <button type="submit" class="send-btn" id="btnAddTransaction">
+          Add transaction
+        </button>
+      </form>
+
+      <!-- HISTORY LIST -->
+      <section
+        class="history-container center-column"
+        id="historyListContainer"
+      >
+        <div class="history-row-title">
+          <h2 class="title">History</h2>
+
+          <button type="button" class="arrow-btn">
+            <img src="./arrow-down.svg" alt="Icon arrow down" />
+          </button>
+        </div>
+
+        <!-- = Example of a history card = -->
+        <!-- <div class="card">
+          <div class="column-1">
+            <p>07</p>
+          </div>
+          <div class="column-2">
+            <p class="description">Gasto 1</p>
+            <p class="amount">-$15.00</p>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <script src="./main.js"></script>
   </body>
 </html>

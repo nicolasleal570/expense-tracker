@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
-  --primary-color: #3c83fe;
-  --secondary-color: #d10014;
-  --text-color: #272838;
-  --accent-color: #999bb8;
+  --accent: #3c83fe;
+  --accent2: #999bb8;
+  --danger: #d10014;
+  --dark: #272838;
 }
 
 * {
@@ -15,72 +15,206 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: var(--dark);
 }
 
-h1 {
-  font-weight: 900;
-  font-size: 2rem;
-  color: var(--text-color);
+h2.app-title {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 2.6em;
 }
 
 .container {
-  display: block;
-  width: 90%;
-  margin: auto;
-  background-color: red;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
-.header-title {
-  text-align: center;
-  margin: 3rem 0;
+.center-column {
+  max-width: 462px;
+  margin: 0 auto;
 }
 
-.your-balance .label {
-  font-weight: 600;
-  font-size: 0.9rem;
+/* === BALANCE SECTION === */
+.balance-container {
+  margin-top: 5em;
+}
+
+.balance-container .balance-title {
   text-transform: uppercase;
-  color: var(--text-color);
-}
-.your-balance .value {
-  font-weight: bold;
-  font-size: 3rem;
-  line-height: 64px;
-  color: var(--text-color);
+  font-size: 0.7em;
+  font-weight: 500;
 }
 
-/* Telefonos XL */
+.balance-container .balance-amount {
+  font-weight: bold;
+  font-size: 2.4em;
+}
+
+/* === TOTAL INFO === */
+.total-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  margin: 4em auto;
+}
+
+.total-info .amount-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  color: #fff;
+}
+
+.total-info .amount-container.income-color {
+  background-color: var(--accent);
+}
+.total-info .amount-container.expense-color {
+  background-color: var(--danger);
+}
+
+.total-info .amount-container .label {
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+  font-size: 0.8em;
+}
+
+.total-info .amount-container .amount {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+/* === ADD NEW TRANSACTION ===  */
+.add-transaction {
+  margin-bottom: 1.7em;
+}
+
+.add-transaction .title {
+  font-size: 1em;
+  color: var(--accent2);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.add-transaction .input-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.add-transaction .input-label span {
+  font-size: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+.add-transaction .input-label input.form-input {
+  height: 2.8em;
+  outline: none;
+  border: 1px solid var(--accent2);
+  padding: 0 0.7em;
+  font-size: 0.9em;
+}
+
+.add-transaction button.send-btn {
+  display: block;
+  background-color: var(--accent);
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 2.8em;
+  padding: 0 2.5em;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* === HISTORY LIST === */
+.history-container .history-row-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-container .history-row-title .title {
+  font-size: 1em;
+  color: var(--accent2);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.history-container .history-row-title .arrow-btn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.history-container .card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1),
+    0px 10px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1rem;
+}
+
+.history-container .card .column-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.history-container .card .column-1 p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.history-container .card .column-1 p:nth-child(2) {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.history-container .card .column-2 {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 1px solid var(--dark);
+  margin-left: 0.6em;
+  padding-left: 0.6em;
+}
+
+.history-container .card .column-2 p.amount {
+  font-weight: 600;
+}
+.history-container .card .column-2 p.amount.income {
+  color: var(--accent);
+}
+.history-container .card .column-2 p.amount.expense {
+  color: var(--danger);
+}
+
+/* Tablet */
 @media (min-width: 640px) {
   .container {
-    background-color: blue;
-  }
-}
-
-/* Tablets */
-@media (min-width: 768px) {
-  .container {
-    margin: 0;
-    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
   }
 
-  .wrapper {
-    width: 462px;
-    margin: auto;
-  }
-}
-
-/* Laptops */
-@media (min-width: 1024px) {
-  .container {
-    width: 940px;
-    margin: auto;
-    background-color: green;
+  h2.app-title {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1.6em;
   }
 }
 
 /* Desktop */
-@media (min-width: 1280px) {
-}
-
-/* Full HD */
-@media (min-width: 1536px) {
+@media (min-width: 1024px) {
+  .container {
+    max-width: 940px;
+    margin: 0 auto;
+  }
 }
